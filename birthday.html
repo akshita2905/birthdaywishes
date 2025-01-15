@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puttina Roju Subhakankshalu</title>
+    <style>
+        body {
+            background-image: url('https://i.pinimg.com/736x/f3/66/da/f366da0a1327f5638cac8f1c42eff079.jpg');
+            background-size: cover;
+            font-family: 'Trebuchet MS', sans-serif;
+            color: #4a4e69;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            position: relative;
+            width: 430px;
+            height: 430px;
+            margin: 100px auto;
+        }
+
+        .envelope {
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.pinimg.com/736x/e7/31/e1/e731e1c2e6097de26ab3a3a9340f2dc1.jpg');
+            background-size: cover;
+            position: absolute;
+            border: 2px solid #dfc2a2;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 3px 10px 10px rgba(0, 0, 0, 1);
+            transition: transform 0.3s ease;
+        }
+
+        .envelope:hover {
+            transform: scale(1.1);
+        }
+
+        .letter {
+            display: none;
+            width: 100%;
+            height: max-content;
+            background: #fffdf9;
+            position: absolute;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #c8b8db;
+            box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2), 0px 4px 10px rgba(0, 0, 0, 0.1);
+            font-family: 'Arial', sans-serif;
+            font-size: 1.2em;
+            color: #4a4e69;
+            transition: all 0.3s ease;
+        }
+
+        .letter button, .button {
+            background-color: #ff8db1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .letter button:hover {
+            background-color: #ff6b8b;
+        }
+
+        .letter p {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .container:hover .letter {
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3), 0px 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            text-align: center;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Image Styling */
+        #magicImage {
+            display: none;
+            width: 100%;
+            height: auto;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block; /* Center the image */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="envelope" id="envelope" onclick="showLetter()"></div>
+        <div class="letter" id="letter">
+            <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: center;">Dear <b><i>Chai Chreee</i></b></p><br>
+            🎉✨ “Appieeee birthdayyy chai chree !” ✨🎉<br><br>
+            🎂💖<br>
+            Hehehe open chesava Code antha chat gpt eh chesanu Aina niku nachutadhi ane ankuntunna😅😅. 
+            Inka better ga cheyachu kani idea late ga ocindhi . Finally <b>20</b>💃🏻🥳😂. Ni teenage aipoindhi 👥. Welcome your new phase of life with additional responsibilities . Ninnu bayapettalani kaadhu idhi oka encouragement ✊🏻🔥. Eppudu edhi share cheskovalanna i will be there for you <br>
+            And thank you nannu prathi sari ardham cheskuntav daniki nenu entha chesina takkuvane 
+            Nen ela unna Kani nannu accept chesthav . I am happy ni favorite people list lo nen kuda unnandhuku 💗.
+            Thank you thank you so much for always choosing me and always being my friend. Ni gurinchi eppudu entha cheppina takkuvane. Na cute sweet pookie potato eppudu happy ga undu have a happy life always. Manchiga time ki tini paduko . Akchitha always supports you no matter what<br><br>
+            <b><i>Akchitaaa</i></b> 🌸🎈<br>
+            <button onclick="openModal()">See Your Birthday Magic!</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>😁😁 comedy ga undhani telsu navvuko em kaadhu 😂😅</p>
+            <!-- Image that will be displayed on clicking "Click Me" -->
+            <img id="magicImage" src="sai sree.jpeg" alt="Birthday Magic Image">
+        </div>
+    </div>
+
+    <script>
+        function showLetter() {
+            document.getElementById('envelope').style.display = 'none';
+            document.getElementById('letter').style.display = 'block';
+        }
+
+        // Open the modal
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        // Close the modal
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Close the modal if clicked outside of it
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("myModal")) {
+                document.getElementById("myModal").style.display = "none";
+            }
+        }
+
+        // Show image when "Click Me!" is clicked
+        function showImage() {
+            document.getElementById("magicImage").style.display = "block";
+        }
+    </script>
+</body>
+</html>
